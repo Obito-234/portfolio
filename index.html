@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hrushikesh - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="profile.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="profile.png" alt="Profile" class="profile-img" />
+                <a href="#home">Hrushikesh</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#achievements" class="nav-link">Achievements</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    I'M A<br>
+                    <span class="role-text"></span>
+                </h1>
+                <p class="hero-description">
+                    I'm Hrushikesh Pathy, a developer who creates beautiful, functional, and user-centered digital experiences. Passionate about clean code and innovative solutions.                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div id="lottie-animation" style="width:440px; height:440px; position:relative; left:40px; top:40px;"></div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#about">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm Hrushikesh Pathy, a passionate developer with a love for creating innovative digital solutions. 
+                        With expertise in modern web technologies, I bring ideas to life through clean, efficient code 
+                        and intuitive user experiences.
+                      </p>
+                      <p>
+                        When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
+                        or sharing knowledge with the developer community.
+                      </p>                      
+                    <div class="resume-download">
+                        <a href="resume.pdf" download class="resume-link">
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>1+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h3>4</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>1</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
+                    <div class="about-education">
+                        <h3>Education</h3>
+                        <div class="education-card education-flex">
+                            <div class="edu-item">
+                                <strong>B.Tech</strong>
+                                <span class="edu-major">Major: <br>Computer Science</span><br>
+                                NIST University,<br> 2022 - 2026
+                            </div>
+                            <div class="edu-divider"></div>
+                            <div class="edu-item">
+                                <strong>Higher Secondary (12th)</strong>
+                                <span class="edu-major">Major:Science</span><br>
+                                OAV Sidhaswar,<br> 2020 - 2022
+                            </div>
+                            <div class="edu-divider"></div>
+                            <div class="edu-item">
+                                <strong>Secondary (10th)</strong><br>
+                                OAV Chhanameri,<br> 2018 - 2020
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-card">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+            </div>
+    </section>
+  <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-status working">Working</div>
+                    <div class="project-image">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Events and sports management</h3>
+                        <p>A full-stack platform to manage sports events, teams, schedules, and administration.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>JavaScript</span>
+                            <span>Tailwind CSS</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            
+                        </div>
+                        <div class="project-links">
+                            <!--
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            -->
+                            <a href="https://github.com/Obito-234/college-event-sports-management-" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                <div class="project-card">
+                    <div class="project-status done">Done</div>
+                    <div class="project-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Task Management App</h3>
+                        <p>A responsive task management application with real-time collaboration features.</p>
+                        <div class="project-tech">
+                            <span>Vue.js</span>
+                            <span>Firebase</span>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                -->
+                <div class="project-card">
+                    <div class="project-status done">Done</div>
+                    <div class="project-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Portfolio Website</h3>
+                        <p>Interactive portfolio website showcasing my projects and skills.</p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            
+                        </div>
+                        <div class="project-links">
+                            <!--<a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>-->
+                            <a href="https://github.com/Obito-234/portfolio" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-content unified-skills">
+                <div class="skill-item">
+                    <span class="skill-name">HTML5</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">CSS3</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">JavaScript</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">React</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Node.js</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Python</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">MongoDB</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">AWS</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="50"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <span class="skill-name">NumPy</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="60"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <span class="skill-name">Java</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="35"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <span class="skill-name">UI/UX</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Canva</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Figma</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="65"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Adobe Photoshop</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="60"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <span class="skill-name">Video Editing</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="50"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-working-on">
+                <h3>Currently Working On</h3>
+                <div class="skills-content unified-skills">
+                    <div class="skill-item">
+                        <span class="skill-name">React Native</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="25"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Three.js</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="25"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Scikit-learn</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="25"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Flutter</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="35"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section (Awards + Certificates) -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <!--
+            <div class="awards-list">
+                <div class="award-item" onclick="openModal('award', 'Best Innovator Award', 'XYZ University, 2022', 'This prestigious award recognizes outstanding innovation and creativity in technology projects. Awarded for developing a groundbreaking solution that improved efficiency by 40%.', 'fas fa-trophy')">
+                    <i class="fas fa-trophy"></i>
+                    <div>
+                        <h4>Best Innovator Award</h4>
+                        <p>XYZ University, 2022</p>
+                    </div>
+                </div>
+                <div class="award-item" onclick="openModal('award', 'Hackathon Winner', 'ABC Hackathon, 2021', 'Won first place in a 48-hour hackathon by creating an innovative mobile application that addressed real-world problems. The solution was praised for its user experience and technical implementation.', 'fas fa-medal')">
+                    <i class="fas fa-medal"></i>
+                    <div>
+                        <h4>Hackathon Winner</h4>
+                        <p>ABC Hackathon, 2021</p>
+                    </div>
+                </div>
+                <div class="award-item" onclick="openModal('award', 'Dean\'s List', 'XYZ University, 2020 & 2021', 'Consistently maintained academic excellence with a GPA above 3.8 for two consecutive years, demonstrating strong commitment to learning and achievement.', 'fas fa-star')">
+                    <i class="fas fa-star"></i>
+                    <div>
+                        <h4>Dean's List</h4>
+                        <p>XYZ University, 2020 & 2021</p>
+                    </div>
+                </div>
+                 -->
+            </div>
+            <div class="certificates-grid">
+                <div class="certificate-item" onclick="openModal('certificate', 'Full Stack Web Development', 'Vizag Steel Plant', 'Comprehensive course covering front-end and back-end development technologies. Completed with distinction and gained practical experience in building full-stack applications.', 'viz.jpg')">
+                    <img src="viz.jpg" alt="Certificate 1">
+                    <p>Full Stack Web Development </p>
+                </div>
+                <div class="certificate-item" onclick="openModal('certificate', 'Data Science and Machine Learning', 'gfg', 'Specialization course covering Python programming fundamentals, data structures, and web scraping. Successfully completed all modules with hands-on projects.', 'gfg.jpg')">
+                    <img src="gfg.jpg" alt="Certificate 2">
+                    <p>Data Science and Machine Learning</p>
+                </div><!--
+                <div class="certificate-item" onclick="openModal('certificate', 'UI/UX Design', 'Udemy', 'Comprehensive design course covering user interface principles, user experience methodologies, and modern design tools. Created multiple portfolio projects.', 'cert3.jpg')">
+                    <img src="cert3.jpg" alt="Certificate 3">
+                    <p>UI/UX Design - Udemy</p>
+                </div>-->
+            </div>
+        </div>
+    </section>
+
+  
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's work together!</h3>
+                    <p>I'm always interested in new opportunities and exciting projects. 
+                       Feel free to reach out if you'd like to collaborate or just say hello.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>hurhsikeshpathy5@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 9090030351</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Berhampur, Odisha, India</span>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com/Obito-234" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/hrushikesh-pathy-ab3775257/" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://x.com/HrushikeshPathy" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/hruushiii?igsh=NDI2bTR0NDhtdzc0" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>~ hrushikesh❤️</p>
+        </div>
+    </footer>
+
+    <!-- Achievement Modal -->
+    <div id="achievementModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-icon">
+                    <i id="modalIcon" class="fas fa-trophy"></i>
+                </div>
+                <h2 id="modalTitle">Achievement Title</h2>
+                <p id="modalSubtitle" class="modal-subtitle">Organization, Year</p>
+                <p id="modalDescription" class="modal-description">Detailed description of the achievement...</p>
+                <div id="modalImage" class="modal-image" style="display: none;">
+                    <img src="" alt="Certificate">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
