@@ -10,11 +10,32 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
+// Close menu when clicking a nav link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
     });
+});
+
+// Close menu when clicking outside (only if menu is open)
+document.addEventListener('click', function(event) {
+    const isMenuOpen = navMenu.classList.contains('active');
+    if (!isMenuOpen) return;
+    // If click is NOT inside hamburger or navMenu
+    if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
+});
+
+// Close menu on scroll (only if menu is open)
+window.addEventListener('scroll', function() {
+    const isMenuOpen = navMenu.classList.contains('active');
+    if (isMenuOpen) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
 });
 
 // Smooth Scrolling 
@@ -32,17 +53,6 @@ navLinks.forEach(link => {
             });
         }
     });
-});
-
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-    }
 });
 
 const observerOptions = {
@@ -488,4 +498,18 @@ document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         closeModal();
     }
+}); 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.querySelector('.navbar');
+    const navMenu = document.querySelector('.nav-menu');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 0) {
+            navbar.classList.add('scrolled');
+            navMenu.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+            navMenu.classList.remove('scrolled');
+        }
+    });
 }); 
