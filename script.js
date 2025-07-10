@@ -378,7 +378,7 @@ const roles = [
   { text: 'DEVELOPER' },
   { text: 'DESIGNER' },
   { text: 'GAMER'},
-  { text: 'EDITER'},
+  { text: 'EDITOR'},
   { text: 'PROGRAMMER' },
   { text: 'CREATOR'}
 ];
