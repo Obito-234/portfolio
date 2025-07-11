@@ -81,24 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // animate skill bars
-    const skillsSection = document.querySelector('.skills');
-    const skillsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                skillBars.forEach(bar => {
-                    const width = bar.getAttribute('data-width');
-                    setTimeout(() => {
-                        bar.style.width = width + '%';
-                    }, 200);
-                });
-                skillsObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    skillsObserver.observe(skillsSection);
-
     // animation for hero section
     if (window.lottie) {
         lottie.loadAnimation({
@@ -110,50 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-// Skill Bars Animation
-function animateSkillBars() {
-    skillBars.forEach(bar => {
-        const width = bar.getAttribute('data-width');
-        bar.style.width = width + '%';
-    });
-}
-
-// Contact form handling
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const subject = formData.get('subject');
-        const message = formData.get('message');
-        
-        // validation
-        if (!name || !email || !subject || !message) {
-            showNotification('Please fill in all fields', 'error');
-            return;
-        }
-        
-        if (!isValidEmail(email)) {
-            showNotification('Please enter a valid email address', 'error');
-            return;
-        }
-        
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        
-        setTimeout(() => {
-            showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-            contactForm.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }, 2000);
-    });
-}
 
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -252,60 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Scroll to top 
-function createScrollToTopButton() {
-    const scrollBtn = document.createElement('button');
-    scrollBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    scrollBtn.className = 'scroll-to-top';
-    scrollBtn.style.cssText = `
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        background: #2563eb;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 1000;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-    `;
-    
-    document.body.appendChild(scrollBtn);
-    
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollBtn.style.opacity = '1';
-            scrollBtn.style.visibility = 'visible';
-        } else {
-            scrollBtn.style.opacity = '0';
-            scrollBtn.style.visibility = 'hidden';
-        }
-    });
-    
-    scrollBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    scrollBtn.addEventListener('mouseenter', () => {
-        scrollBtn.style.transform = 'translateY(-3px)';
-        scrollBtn.style.boxShadow = '0 6px 20px rgba(37, 99, 235, 0.4)';
-    });
-    
-    scrollBtn.addEventListener('mouseleave', () => {
-        scrollBtn.style.transform = 'translateY(0)';
-        scrollBtn.style.boxShadow = '0 4px 12px rgba(37, 99, 235, 0.3)';
-    });
-}
-
-createScrollToTopButton();
 
 function updateActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
@@ -418,36 +302,6 @@ function typeRole() {
 }
 typeRole();
 
-function animateSkills() {
-    const skillItems = document.querySelectorAll('.skills-content.unified-skills .skill-item');
-    skillItems.forEach((item, idx) => {
-        item.style.setProperty('--skill-index', idx);
-    });
-    // Animate progress bars
-    const skillBars = document.querySelectorAll('.skill-progress');
-    skillBars.forEach(bar => {
-        const width = bar.getAttribute('data-width');
-        setTimeout(() => {
-            bar.style.width = width + '%';
-        }, 200);
-    });
-}
-
-function onSkillsInView() {
-    const skillsSection = document.querySelector('#skills');
-    if (!skillsSection) return;
-    const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateSkills();
-                obs.disconnect();
-            }
-        });
-    }, { threshold: 0.2 });
-    observer.observe(skillsSection);
-}
-onSkillsInView();
-
 //  functionality achievements
 function openModal(type, title, subtitle, description, iconOrImage) {
     const modal = document.getElementById('achievementModal');
@@ -513,3 +367,47 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 }); 
+
+// Animate skill cards on scroll (fade-in-up)
+document.addEventListener('DOMContentLoaded', () => {
+    // Add fade-in-up class to all skill cards
+    document.querySelectorAll('.skill-card').forEach(card => {
+        card.classList.add('fade-in-up');
+    });
+
+    // IntersectionObserver for skill cards
+    const skillCards = document.querySelectorAll('.skill-card');
+    const skillCardObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    skillCards.forEach(card => {
+        skillCardObserver.observe(card);
+    });
+
+    // Add fade-in-up class to all achievement cards
+    document.querySelectorAll('.certificate-item').forEach(card => {
+        card.classList.add('fade-in-up');
+    });
+
+    // IntersectionObserver for achievement cards
+    const achievementCards = document.querySelectorAll('.certificate-item');
+    const achievementCardObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    achievementCards.forEach(card => {
+        achievementCardObserver.observe(card);
+    });
+}); 
+
