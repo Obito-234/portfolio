@@ -115,7 +115,6 @@ function showNotification(message, type = 'info') {
         </div>
     `;
     
-    // Add styles
     notification.style.cssText = `
         position: fixed;
         top: 20px;
@@ -373,7 +372,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Animate skill cards on scroll (fade-in-up)
 document.addEventListener('DOMContentLoaded', () => {
-    // Add fade-in-up class to all skill cards
     document.querySelectorAll('.skill-card').forEach(card => {
         card.classList.add('fade-in-up');
     });
@@ -393,7 +391,6 @@ document.addEventListener('DOMContentLoaded', () => {
         skillCardObserver.observe(card);
     });
 
-    // Add fade-in-up class to all achievement cards
     document.querySelectorAll('.certificate-item').forEach(card => {
         card.classList.add('fade-in-up');
     });
@@ -425,33 +422,27 @@ function toggleTheme(event) {
     const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     
-    // Get mouse position for animation
     const mouseX = event ? event.clientX : window.innerWidth / 2;
     const mouseY = event ? event.clientY : window.innerHeight / 2;
     
-    // Create and animate the overlay
     animateThemeChange(newTheme, mouseX, mouseY);
 }
 
 function animateThemeChange(newTheme, mouseX, mouseY) {
     const overlay = document.getElementById('theme-animation-overlay');
     
-    // Set the overlay class and position
     overlay.className = `theme-animation-overlay ${newTheme}`;
     overlay.style.setProperty('--mouse-x', mouseX + 'px');
     overlay.style.setProperty('--mouse-y', mouseY + 'px');
     
-    // Start the animation
     overlay.classList.add('animate');
     
-    // Update the actual theme after a short delay
     setTimeout(() => {
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         updateThemeIcon(newTheme);
     }, 600);
     
-    // Remove the overlay after animation completes
     setTimeout(() => {
         overlay.classList.remove('animate');
         overlay.className = 'theme-animation-overlay';
@@ -477,16 +468,13 @@ function updateThemeIcon(theme) {
     }
 }
 
-// Initialize theme on page load
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     
-    // Add event listener to desktop theme toggle button
     if (themeToggle) {
         themeToggle.addEventListener('click', (event) => toggleTheme(event));
     }
     
-    // Add event listener to mobile theme toggle button
     if (mobileThemeToggle) {
         mobileThemeToggle.addEventListener('click', (event) => toggleTheme(event));
     }
