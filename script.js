@@ -3,6 +3,8 @@ const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 const skillBars = document.querySelectorAll('.skill-progress');
 const contactForm = document.querySelector('.contact-form');
+const themeToggle = document.getElementById('theme-toggle');
+const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
 
 // Mobile Navigation Toggle
 hamburger.addEventListener('click', () => {
@@ -219,11 +221,12 @@ window.addEventListener('scroll', updateActiveNavLink);
 const style = document.createElement('style');
 style.textContent = `
     .nav-link.active {
-        color: #2563eb !important;
+        color: var(--primary-color) !important;
     }
     
     .nav-link.active::after {
         width: 100% !important;
+        background: var(--primary-color) !important;
     }
     
     .notification-content {
@@ -410,4 +413,82 @@ document.addEventListener('DOMContentLoaded', () => {
         achievementCardObserver.observe(card);
     });
 }); 
+
+// Theme Toggle Functionality
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+}
+
+function toggleTheme(event) {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    // Get mouse position for animation
+    const mouseX = event ? event.clientX : window.innerWidth / 2;
+    const mouseY = event ? event.clientY : window.innerHeight / 2;
+    
+    // Create and animate the overlay
+    animateThemeChange(newTheme, mouseX, mouseY);
+}
+
+function animateThemeChange(newTheme, mouseX, mouseY) {
+    const overlay = document.getElementById('theme-animation-overlay');
+    
+    // Set the overlay class and position
+    overlay.className = `theme-animation-overlay ${newTheme}`;
+    overlay.style.setProperty('--mouse-x', mouseX + 'px');
+    overlay.style.setProperty('--mouse-y', mouseY + 'px');
+    
+    // Start the animation
+    overlay.classList.add('animate');
+    
+    // Update the actual theme after a short delay
+    setTimeout(() => {
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    }, 600);
+    
+    // Remove the overlay after animation completes
+    setTimeout(() => {
+        overlay.classList.remove('animate');
+        overlay.className = 'theme-animation-overlay';
+    }, 1200);
+}
+
+function updateThemeIcon(theme) {
+    const lightIcon = document.querySelector('.light-icon');
+    const darkIcon = document.querySelector('.dark-icon');
+    const mobileLightIcon = document.querySelector('.mobile-light-icon');
+    const mobileDarkIcon = document.querySelector('.mobile-dark-icon');
+    
+    if (theme === 'dark') {
+        lightIcon.style.display = 'none';
+        darkIcon.style.display = 'block';
+        mobileLightIcon.style.display = 'none';
+        mobileDarkIcon.style.display = 'block';
+    } else {
+        lightIcon.style.display = 'block';
+        darkIcon.style.display = 'none';
+        mobileLightIcon.style.display = 'block';
+        mobileDarkIcon.style.display = 'none';
+    }
+}
+
+// Initialize theme on page load
+document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    
+    // Add event listener to desktop theme toggle button
+    if (themeToggle) {
+        themeToggle.addEventListener('click', (event) => toggleTheme(event));
+    }
+    
+    // Add event listener to mobile theme toggle button
+    if (mobileThemeToggle) {
+        mobileThemeToggle.addEventListener('click', (event) => toggleTheme(event));
+    }
+});
 

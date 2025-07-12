@@ -38,7 +38,20 @@
                 <li class="nav-item">
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
+                <li class="nav-item mobile-theme-toggle">
+                    <button id="mobile-theme-toggle" class="mobile-theme-toggle-btn">
+                        <i class="fas fa-moon mobile-light-icon"></i>
+                        <i class="fas fa-sun mobile-dark-icon"></i>
+                        <span></span>
+                    </button>
+                </li>
             </ul>
+            <div class="theme-toggle">
+                <button id="theme-toggle" class="theme-toggle-btn">
+                    <i class="fas fa-moon light-icon"></i>
+                    <i class="fas fa-sun dark-icon"></i>
+                </button>
+            </div>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -203,7 +216,7 @@
                     </div>
                     <div class="project-content">
                         <h3>Portfolio Website</h3>
-                        <p>Interactive portfolio website showcasing my projects and skills.</p>
+                        <p>Interactive and fully responsive portfolio website showcasing my projects, skills, and achievements. a mobile-friendly design for seamless viewing on any device.</p>
                         <div class="project-tech">
                             <span>HTML5</span>
                             <span>CSS3</span>
@@ -211,9 +224,9 @@
                             
                         </div>
                         <div class="project-links">
-                            <!--<a href="#" class="project-link">
+                                <a href="#" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>-->
+                                </a>
                             <a href="https://github.com/Obito-234/portfolio" class="project-link">
                                 <i class="fab fa-github"></i> Code
                             </a>
@@ -288,6 +301,10 @@
                         <span>Photoshop</span>
                     </div>
                     <div class="skill-card">
+                        <i class="fas fa-palette" style="font-size: 3rem; color: #FF6B6B;"></i>
+                        <span>UI/UX Design</span>
+                    </div>
+                    <div class="skill-card">
                         <img src="https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png" alt="Vercel" style="height: 3rem; width: 3rem; margin-bottom: 0.5rem; border-radius: 8px; background: #fff;" />
                         <span>Vercel</span>
                     </div>
@@ -322,7 +339,7 @@
                     <img src="viz.jpg" alt="Certificate 1">
                     <p>Full Stack Web Development </p>
                 </div>
-                <div class="certificate-item" onclick="openModal('certificate', 'Data Science and Machine Learning', 'gfg', 'Specialization course covering Python programming fundamentals, data structures, and web scraping. Successfully completed all modules with hands-on projects.', 'gfg.jpg')">
+                <div class="certificate-item" onclick="openModal('certificate', 'Data Science and Machine Learning Workshop', 'GeeksforGeeks', 'Participated in a hands-on Data Science and Machine Learning workshop organized by GeeksforGeeks. Gained practical experience with Python, data analysis, and machine learning concepts through interactive sessions and real-world projects.', 'gfg.jpg')">
                     <img src="gfg.jpg" alt="Certificate 2">
                     <p>Data Science and Machine Learning</p>
                 </div><!--
@@ -421,6 +438,7 @@
         </div>
     </div>
 
+    <div id="theme-animation-overlay" class="theme-animation-overlay"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
     <script src="script.js"></script>
 </body>
